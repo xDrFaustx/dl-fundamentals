@@ -1,0 +1,58 @@
+type: order_cards
+visible: false
+header: Derivative of Sinus
+text: Order cards to get proof of derivative of sinus
+shuffle: true
+score: 1
+quiz:
+  variants:
+    - text: |
+        Expaning first term in the enumerator:
+        $$\frac{\sin(x) \cos(dx) + \cos(x) \sin(dx) - \sin(x)}{dx}$$
+    - text: >
+        Secondly, for small values of $dx$ (due to the same reason): 
+
+        $$\cos(dx) = \sqrt{1 - \sin^2 dx} \approx \sqrt{1 - dx^2} \approx 1 -
+        \frac{dx^2}{2}$$
+    - text: |
+        Simplify the expression:
+        $$\frac{\sin(x) - \frac{dx^2}{2} \sin(x) + \cos(x) dx - \sin(x)}{dx}$$
+    - text: |
+        Substitute the approximations into the expression:
+        $$\frac{\sin(x) (1 - \frac{dx^2}{2}) + \cos(x) dx - \sin(x)}{dx}$$
+    - text: >
+        Take derivative of a function and insert $f(x) = \sin (x)$:
+
+        $$\frac{d f(x)}{dx} = \frac{f(x + dx) - f(x)}{dx} = \frac{\sin(x + dx) -
+        \sin(x)}{dx}$$
+    - text: |
+        For small values of $dx$ first term is negligible:
+        $$\cos(x)$$
+    - text: |
+        The first and the last term cancels:
+        $$\frac{- \frac{dx^2}{2} \sin(x) + \cos(x) dx}{dx}$$
+    - text: |
+        Firstly, for small values of $dx$: 
+        $$\sin(dx) \approx dx$$
+    - text: |
+        So, the derivative of $\sin(x)$ is $\cos(x)$:
+        $$\frac{d \sin(x)}{dx} = \cos(x)$$
+    - text: |
+        Use trigonometric identity:
+        $$\sin(a + b) = \sin(a) \cos(b) + \cos(a) \sin(b)$$
+        to expand the first term in the enumerator.
+    - text: |
+        $dx$ in enumerator and in denominator cancels:
+        $$- \frac{dx}{2} \sin(x) + \cos(x)$$
+answer:
+  - c81e728d9d4c2f636f067f89cc14862c
+  - a87ff679a2f3e71d9181a67b7542122c
+  - 1679091c5a880faf6fb5e6087eb1b2dc
+  - e4da3b7fbbce2345d7772b0674a318d5
+  - cfcd208495d565ef66e7dff9f98764da
+  - 45c48cce2e2d7fbdea1afc51c7c6ad26
+  - 8f14e45fceea167a5a36dedd4bea2543
+  - eccbc87e4b5ce2fe28308fd9f2a7baf3
+  - d3d9446802a44259755d38e6d163e820
+  - c4ca4238a0b923820dcc509a6f75849b
+  - c9f0f895fb98ab9159f51fd0297e236d

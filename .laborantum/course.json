@@ -1,0 +1,8 @@
+{
+    "courseName": "neural-networks",
+    "includeData": [
+        ".laborantum/utils",
+        ".devcontainer",
+        ".vscode"],
+    "buildFolder": "./build"
+}

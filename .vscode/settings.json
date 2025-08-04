@@ -1,0 +1,7 @@
+{
+    "laborantum.dockerLaunchMode": "docker",
+    "laborantum.processStreamEncoding": "utf-8",
+    "jupyter.logging.level": "debug",
+    "jupyter.jupyterServerType": "local",
+    "python.languageServer": "Jedi"
+}

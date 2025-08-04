@@ -1,0 +1,105 @@
+type: choose_any
+visible: false
+text: Select the correct statements
+header: Matrix Product Quiz
+shuffle: true
+score: 1
+quiz:
+  variants:
+    - text: |
+        $\forall A \in \mathbb R^{N \times N}$ and 
+        $\forall \mathbf x \in \mathbb R^M \Rightarrow 
+        A \mathbf x \in \mathbb R^N$ 
+    - text: |
+        $\forall A \in \mathbb R^{N \times N}$ and 
+        $\forall \mathbf x \in \mathbb R^N \Rightarrow 
+        A \mathbf x \in \mathbb R^N$ 
+    - text: |
+        $\forall A \in \mathbb R^{N \times K}$ and 
+        $\forall B \in \mathbb R^{K \times M} \Rightarrow 
+        A B \in \mathbb R^{N \times M}$ 
+    - text: |
+        $\forall A \in \mathbb R^{N \times N}$ and 
+        $\forall B \in \mathbb R^{K \times M} \Rightarrow 
+        A B \in \mathbb R^{N \times M}$ 
+    - text: >
+        $\forall A = \begin{bmatrix}
+          \mathbf a_1 & 
+          \dots &
+          \mathbf a_N
+        \end{bmatrix} \in \mathbb R^{K \times N}$ 
+
+
+        and
+
+
+        $\forall B = \begin{bmatrix}
+          \mathbf b_1 & \dots & \mathbf b_M
+        \end{bmatrix} \in \mathbb R^{K \times M} \Rightarrow$
+
+
+        $A^T B = \begin{bmatrix}
+          \left<\mathbf a_1, \mathbf b_1\right> & \dots & \left<\mathbf a_1, \mathbf b_M\right> \\
+          \vdots & \ddots & \vdots \\
+          \left<\mathbf a_N, \mathbf b_1\right> & \dots & \left<\mathbf a_N, \mathbf b_M\right>
+        \end{bmatrix} \in \mathbb R^{N \times M}$
+    - text: |
+        $\forall A \in \mathbb R^{K \times N}$ and
+        $\forall B = \begin{bmatrix}
+          \mathbf b_1 & \dots & \mathbf b_M
+        \end{bmatrix} \in \mathbb R^{K \times M} \Rightarrow$
+        $A^T B = \begin{bmatrix}
+          A^T \mathbf b_1 & \dots & A^T \mathbf b_M
+        \end{bmatrix} \in \mathbb R^{N \times M}$
+    - text: |
+        $\forall B \in \mathbb R^{K \times N}$ and
+        $\forall A = \begin{bmatrix}
+          \mathbf a_1 & \dots & \mathbf a_N
+        \end{bmatrix} \in \mathbb R^{K \times M} \Rightarrow$
+        $A^T B = \begin{bmatrix}
+          \mathbf a_1^T B \\ \vdots \\ \mathbf a_N^T B
+        \end{bmatrix} \in \mathbb R^{N \times M}$
+    - text: |
+        Suppose that we want to calculate the product $A B$ and we realise
+        that matrix $A$ contains zeros in $50\%$ of the positions. That
+        means that we can perform $50\%$ less operations of multiplication to
+        calculate $AB$
+    - text: |
+        Suppose that we want to calculate the product $A B$ and we realise
+        that both matrices $A$ and $B$ contains zeros in $50\%$ of the 
+        positions. That
+        means that we can perform $75\%$ less operations of multiplication to
+        calculate $AB$
+    - text: |
+        Matrix product $AB$ is always equal to elementwise matrix
+        product $A \cdot B$
+    - text: >
+        $\forall \alpha, \beta \in \mathbb R$, $\forall \mathbf x \in \mathbb
+        R^M$ and 
+
+        $\forall A, B \in \mathbb R^{N \times M} \Rightarrow$
+
+        $(\alpha A + \beta B) \mathbf x = \alpha A \mathbf x + \beta B \mathbf
+        x$
+    - text: >
+        $\forall \alpha, \beta \in \mathbb R$, 
+
+        $\forall \mathbf x, \mathbf y \in \mathbb R^M$ and 
+
+        $\forall A \in \mathbb R^{N \times M} \Rightarrow$
+
+        $A (\alpha \mathbf x + \beta \mathbf y)  = \alpha A \mathbf x + \beta A
+        \mathbf y$
+answer:
+  - e40f8783c8a36d2aeaf213cd1feea5f6
+  - 2eefcf2578a48b9e2277e016cc1607d7
+  - 53e52f94ca5d39345c702a76747a93a0
+  - f864923c615087153ccad2264704dce1
+  - 60993c2f30ae4189fe62a1ba2ec4f8ea
+  - e17506dc9641f576c3e653bbc105afee
+  - 7751ad56818878e3a98ddf9d966b5ab4
+  - 22c81433751f845ec74bc504d25ad50e
+  - dff9a8df2c6bed3fe651ddfdf7c1cbf1
+  - 609add565fd11999318ec7f9926e5fbf
+  - 96c074f4078fdfae56c6addb83a665fa
+  - ca681cc4fdc4c649155fab54b54ae18c
