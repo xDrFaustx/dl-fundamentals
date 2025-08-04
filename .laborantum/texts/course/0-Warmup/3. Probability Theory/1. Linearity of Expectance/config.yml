@@ -6,16 +6,24 @@ shuffle: true
 score: 1
 quiz:
   variants:
+    - text: >
+        Using the classical definition of probability, we may think of $p(\xi =
+        x_k)$ as
+
+        about a fraction of the experiments that yield $x_k$ as the output
+    - text: >
+        Consider $\mathbb E (a \xi + b \eta)$ and rewrite as average of many
+        experiments:
     - text: |
-        Start with definition of $\mathbb E \xi$,
-        $$\mathbb E \xi = \sum_k p(\xi=x_k) x_k,$$
-        where k runs over all possible $x_k$ outputs
+        Thus, we have proved:
+        $$\mathbb E (a \xi + b \eta) = a \mathbb E \xi + b \mathbb E \eta$$
     - text: >
         $$\mathbb E (a \xi + b \eta) = \frac{1}{N}\sum_{n=1}^N a \xi_n + b
         \eta_n$$
     - text: |
-        Thus, we have proved:
-        $$\mathbb E (a \xi + b \eta) = a \mathbb E \xi + b \mathbb E \eta$$
+        Start with definition of $\mathbb E \xi$,
+        $$\mathbb E \xi = \sum_k p(\xi=x_k) x_k,$$
+        where k runs over all possible $x_k$ outputs
     - text: >
         Thus, we can rewrite
 
@@ -27,28 +35,20 @@ quiz:
 
         the $N$ experiments
     - text: >
-        Consider $\mathbb E (a \xi + b \eta)$ and rewrite as average of many
-        experiments:
-    - text: >
-        Using the classical definition of probability, we may think of $p(\xi =
-        x_k)$ as
-
-        about a fraction of the experiments that yield $x_k$ as the output
-    - text: |
-        But we know that
-        $$\mathbb E \xi =\frac{1}{N}\sum_{n=1}^N \xi_n$$
-        $$\mathbb E \eta =\frac{1}{N}\sum_{n=1}^N \eta_n$$
-    - text: >
         Rewriting this formula, we will get:
 
         $$\mathbb E (a \xi + b \eta) = a \frac{1}{N}\sum_{n=1}^N \xi_n + b
         \frac{1}{N}\sum_{n=1}^N b \eta_n$$
+    - text: |
+        But we know that
+        $$\mathbb E \xi =\frac{1}{N}\sum_{n=1}^N \xi_n$$
+        $$\mathbb E \eta =\frac{1}{N}\sum_{n=1}^N \eta_n$$
 answer:
-  - cfcd208495d565ef66e7dff9f98764da
-  - a87ff679a2f3e71d9181a67b7542122c
-  - 8f14e45fceea167a5a36dedd4bea2543
-  - c81e728d9d4c2f636f067f89cc14862c
-  - eccbc87e4b5ce2fe28308fd9f2a7baf3
   - c4ca4238a0b923820dcc509a6f75849b
-  - 1679091c5a880faf6fb5e6087eb1b2dc
+  - eccbc87e4b5ce2fe28308fd9f2a7baf3
+  - 8f14e45fceea167a5a36dedd4bea2543
+  - a87ff679a2f3e71d9181a67b7542122c
+  - cfcd208495d565ef66e7dff9f98764da
+  - c81e728d9d4c2f636f067f89cc14862c
   - e4da3b7fbbce2345d7772b0674a318d5
+  - 1679091c5a880faf6fb5e6087eb1b2dc

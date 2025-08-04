@@ -6,20 +6,11 @@ shuffle: true
 score: 1
 quiz:
   variants:
-    - text: |
-        Hence, the derivative of $\arcsin x$ is:
-        $$\frac{d}{dx}\arcsin x = \frac{1}{\sqrt{1 - x^2}}$$
-    - text: |
-        But this expression should be equal to 1!:
-        $$\frac{d \arcsin(y)}{d(y)}\frac{d(y)}{dx} = 1$$
     - text: >
         Replace $\sin x$ with $y$:
 
         $$\frac{d}{dx}\arcsin(\sin(x)) = \frac{d
         \arcsin(y)}{d(y)}\frac{d(y)}{dx}$$
-    - text: |
-        Take derivative of both sides:
-        $$\frac{d}{dx}\arcsin(\sin(x)) = \frac{dx}{dx}$$
     - text: |
         Finally, replace $\cos x$ with $\sqrt{1 - \sin^2 x}$:
         $$\frac{d \arcsin(y)}{d(y)} = \frac{1}{\sqrt{1 - y^2}}$$
@@ -31,25 +22,34 @@ quiz:
         $$\frac{dx}{dx} = 1$$
         And thus:
         $$\frac{d}{dx}\arcsin(\sin(x)) = 1$$
+    - text: |
+        Consider combination of forward and inverse functions
+        $$\arcsin(\sin(x)) = x$$
     - text: >
         For the left side, use chain rule:
 
         $$\frac{d}{dx}\arcsin(\sin(x)) = \frac{d
         \arcsin(\sin(x))}{d(\sin(x))}\frac{d(\sin(x))}{dx}$$
     - text: |
+        Take derivative of both sides:
+        $$\frac{d}{dx}\arcsin(\sin(x)) = \frac{dx}{dx}$$
+    - text: |
+        Hence, the derivative of $\arcsin x$ is:
+        $$\frac{d}{dx}\arcsin x = \frac{1}{\sqrt{1 - x^2}}$$
+    - text: |
+        But this expression should be equal to 1!:
+        $$\frac{d \arcsin(y)}{d(y)}\frac{d(y)}{dx} = 1$$
+    - text: |
         So, we have:
         $$\frac{d \arcsin(y)}{d(y)} = \frac{1}{\frac{dy}{dx}}$$
-    - text: |
-        Consider combination of forward and inverse functions
-        $$\arcsin(\sin(x)) = x$$
 answer:
-  - 45c48cce2e2d7fbdea1afc51c7c6ad26
-  - e4da3b7fbbce2345d7772b0674a318d5
   - a87ff679a2f3e71d9181a67b7542122c
-  - c4ca4238a0b923820dcc509a6f75849b
   - c9f0f895fb98ab9159f51fd0297e236d
   - 8f14e45fceea167a5a36dedd4bea2543
   - c81e728d9d4c2f636f067f89cc14862c
-  - eccbc87e4b5ce2fe28308fd9f2a7baf3
-  - 1679091c5a880faf6fb5e6087eb1b2dc
   - cfcd208495d565ef66e7dff9f98764da
+  - eccbc87e4b5ce2fe28308fd9f2a7baf3
+  - c4ca4238a0b923820dcc509a6f75849b
+  - 45c48cce2e2d7fbdea1afc51c7c6ad26
+  - e4da3b7fbbce2345d7772b0674a318d5
+  - 1679091c5a880faf6fb5e6087eb1b2dc
