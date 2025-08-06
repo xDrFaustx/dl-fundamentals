@@ -17,14 +17,17 @@ quiz:
         $P(\mathbf x_1, \mathbf x_2, \dots, \mathbf x_N) = \prod_k p(\mathbf
         x_k)$
     - text: >
-        The best parameters will be such $\Sigma$ and $\mu$ that are the 
+        Take logarithm of the probability of the observed set to get rid
 
-        solution of the following optization problem:
+        of summation:
 
 
-        $$\Sigma, \mu = \underset{\Sigma, \mu}{\textrm{argmin}}
-        \left[\frac{k}{2} \log (\det \Sigma) + \sum_k (\mathbf x_k - \mu)^T
-        \Sigma^{-1}(\mathbf x_k - \mu) \right]$$
+        $$\log P(\mathbf x_1, \mathbf x_2, \dots, \mathbf x_N) = $$
+
+        $$= \sum_k \log p(\mathbf x_k) =$$
+
+        $$= - k \log (2 \pi)^{n/2} - k \log ((\det \Sigma)^{1/2}) - \sum_k
+        (\mathbf x_k - \mu)^T \Sigma^{-1}(\mathbf x_k - \mu) $$
     - text: >
         Consider a set of samples 
 
@@ -49,6 +52,15 @@ quiz:
 
         the best fit for the set of samples
     - text: >
+        The best parameters will be such $\Sigma$ and $\mu$ that are the 
+
+        solution of the following optization problem:
+
+
+        $$\Sigma, \mu = \underset{\Sigma, \mu}{\textrm{argmin}}
+        \left[\frac{k}{2} \log (\det \Sigma) + \sum_k (\mathbf x_k - \mu)^T
+        \Sigma^{-1}(\mathbf x_k - \mu) \right]$$
+    - text: >
         Turning maximization problem into standard minimization problem,
 
         we get the loss function:
@@ -59,22 +71,10 @@ quiz:
     - text: |
         The first term is a constant and cannot be optimized, while the
         second and third ones can be maximized by tuning $\mu$ and $\Sigma$
-    - text: >
-        Take logarithm of the probability of the observed set to get rid
-
-        of summation:
-
-
-        $$\log P(\mathbf x_1, \mathbf x_2, \dots, \mathbf x_N) = $$
-
-        $$= \sum_k \log p(\mathbf x_k) =$$
-
-        $$= - k \log (2 \pi)^{n/2} - k \log ((\det \Sigma)^{1/2}) - \sum_k
-        (\mathbf x_k - \mu)^T \Sigma^{-1}(\mathbf x_k - \mu) $$
 answer:
   - c81e728d9d4c2f636f067f89cc14862c
   - cfcd208495d565ef66e7dff9f98764da
+  - c4ca4238a0b923820dcc509a6f75849b
   - e4da3b7fbbce2345d7772b0674a318d5
   - a87ff679a2f3e71d9181a67b7542122c
   - eccbc87e4b5ce2fe28308fd9f2a7baf3
-  - c4ca4238a0b923820dcc509a6f75849b

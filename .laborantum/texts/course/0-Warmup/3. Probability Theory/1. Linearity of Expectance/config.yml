@@ -6,24 +6,22 @@ shuffle: true
 score: 1
 quiz:
   variants:
-    - text: >
-        Consider $\mathbb E (a \xi + b \eta)$ and rewrite as average of many
-        experiments:
-    - text: >
-        $$\mathbb E (a \xi + b \eta) = \frac{1}{N}\sum_{n=1}^N a \xi_n + b
-        \eta_n$$
     - text: |
         Start with definition of $\mathbb E \xi$,
         $$\mathbb E \xi = \sum_k p(\xi=x_k) x_k,$$
         where k runs over all possible $x_k$ outputs
-    - text: |
-        Thus, we have proved:
-        $$\mathbb E (a \xi + b \eta) = a \mathbb E \xi + b \mathbb E \eta$$
     - text: >
         Rewriting this formula, we will get:
 
         $$\mathbb E (a \xi + b \eta) = a \frac{1}{N}\sum_{n=1}^N \xi_n + b
         \frac{1}{N}\sum_{n=1}^N b \eta_n$$
+    - text: >
+        $$\mathbb E (a \xi + b \eta) = \frac{1}{N}\sum_{n=1}^N a \xi_n + b
+        \eta_n$$
+    - text: |
+        But we know that
+        $$\mathbb E \xi =\frac{1}{N}\sum_{n=1}^N \xi_n$$
+        $$\mathbb E \eta =\frac{1}{N}\sum_{n=1}^N \eta_n$$
     - text: >
         Thus, we can rewrite
 
@@ -35,20 +33,22 @@ quiz:
 
         the $N$ experiments
     - text: >
+        Consider $\mathbb E (a \xi + b \eta)$ and rewrite as average of many
+        experiments:
+    - text: >
         Using the classical definition of probability, we may think of $p(\xi =
         x_k)$ as
 
         about a fraction of the experiments that yield $x_k$ as the output
     - text: |
-        But we know that
-        $$\mathbb E \xi =\frac{1}{N}\sum_{n=1}^N \xi_n$$
-        $$\mathbb E \eta =\frac{1}{N}\sum_{n=1}^N \eta_n$$
+        Thus, we have proved:
+        $$\mathbb E (a \xi + b \eta) = a \mathbb E \xi + b \mathbb E \eta$$
 answer:
-  - c81e728d9d4c2f636f067f89cc14862c
-  - 1679091c5a880faf6fb5e6087eb1b2dc
-  - e4da3b7fbbce2345d7772b0674a318d5
   - cfcd208495d565ef66e7dff9f98764da
-  - c4ca4238a0b923820dcc509a6f75849b
+  - 1679091c5a880faf6fb5e6087eb1b2dc
   - a87ff679a2f3e71d9181a67b7542122c
-  - 8f14e45fceea167a5a36dedd4bea2543
+  - e4da3b7fbbce2345d7772b0674a318d5
+  - c81e728d9d4c2f636f067f89cc14862c
+  - c4ca4238a0b923820dcc509a6f75849b
   - eccbc87e4b5ce2fe28308fd9f2a7baf3
+  - 8f14e45fceea167a5a36dedd4bea2543
