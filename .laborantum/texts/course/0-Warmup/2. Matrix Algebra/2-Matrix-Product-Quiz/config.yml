@@ -79,7 +79,7 @@ quiz:
 
         $\forall A, B \in \mathbb R^{N \times M} \Rightarrow$
 
-        $(\alpha A + \beta B) \mathbf x = \alpha A \mathbf x + \beta B \mathbf
+        $(\alpha A + \beta B ) \mathbf x = \alpha A \mathbf x + \beta B \mathbf
         x$
     - text: >
         $\forall \alpha, \beta \in \mathbb R$, 
