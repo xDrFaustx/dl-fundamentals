@@ -8,32 +8,22 @@ shuffle: true
 score: 1
 quiz:
   variants:
+    - text: |
+        It is equal to 
+
+        $$\frac{k}{\sigma} - \sum_k \frac{(x_k - \mu)^2}{\sigma^3} = 0$$
+    - text: |
+        Consider now 
+
+        $$\frac{\partial L}{\partial \sigma} = 0$$
     - text: >
-        Now one can find optimal value for $\mu$ by taking a derivative
+        The best parameters will be such $\Sigma$ and $\mu$ that are the 
+
+        solution of the following optization problem:
 
 
-        $$\frac{\partial L}{\partial \mu} = \frac{1}{\sigma^2} \sum_k (x_k -
-        \mu) = \frac{1}{2 \sigma^2} \sum_k x_k - \frac{k \mu}{2 \sigma^2}$$
-    - text: >
-        After simplification, it becomes:
-
-
-        $$\sigma^2 = \frac{1}{k} \sum_k (x_k - \mu)^2$$
-
-
-        I.e., optimal parameter \sigma^2 for Normal Distribution is equal to
-        the 
-
-        mean of squared deviations.
-    - text: >
-        That after simplification turns into
-
-
-        $$\mu = \frac{\sum_k x_k}{k}$$
-
-
-        I.e., optimal parameter $\mu$ for Normal Distribution is the mean of the
-        observed samples
+        $$\sigma, \mu = \underset{\sigma, \mu}{\textrm{argmin}} \left[k \log
+        \sigma + \sum_k \frac{(x_k - \mu)^2}{2 \sigma^2} \right]$$
     - text: >
         Take logarithm of the probability of the observed set to get rid
 
@@ -46,24 +36,49 @@ quiz:
 
         $$= - k \frac{1}{2} \log (2\pi) - k \log \sigma - \sum_k \frac{(x_k -
         \mu)^2}{2 \sigma^2}$$
-    - text: |
-        It is equal to 
-
-        $$\frac{k}{\sigma} - \sum_k \frac{(x_k - \mu)^2}{\sigma^3} = 0$$
     - text: >
-        The best parameters will be such $\Sigma$ and $\mu$ that are the 
-
-        solution of the following optization problem:
+        After simplification, it becomes:
 
 
-        $$\sigma, \mu = \underset{\sigma, \mu}{\textrm{argmin}} \left[k \log
-        \sigma + \sum_k \frac{(x_k - \mu)^2}{2 \sigma^2} \right]$$
+        $$\sigma^2 = \frac{1}{k} \sum_k (x_k - \mu)^2$$
+
+
+        I.e., optimal parameter \sigma^2 for Normal Distribution is equal to
+        the 
+
+        mean of squared deviations.
+    - text: >
+        Now one can find optimal value for $\mu$ by taking a derivative
+
+
+        $$\frac{\partial L}{\partial \mu} = \frac{1}{\sigma^2} \sum_k (x_k -
+        \mu) = \frac{1}{2 \sigma^2} \sum_k x_k - \frac{k \mu}{2 \sigma^2}$$
     - text: >
         Setting this derivative to zero (with accordance with extremum
         condition), we get equation:
 
 
         $$\frac{1}{2 \sigma^2} \sum_k x_k - \frac{k \mu}{2 \sigma^2} = 0$$
+    - text: >
+        Turning maximization problem into standard minimization problem,
+
+        we get the loss function:
+
+
+        $$L = k \log \sigma + \sum_k \frac{(x_k - \mu)^2}{2 \sigma^2}$$
+
+
+        that is surprisingly similar to the Squared Error (up to a scaling
+        factor and an additional term)
+    - text: >
+        That after simplification turns into
+
+
+        $$\mu = \frac{\sum_k x_k}{k}$$
+
+
+        I.e., optimal parameter $\mu$ for Normal Distribution is the mean of the
+        observed samples
     - text: |
         Let us find probability of the set of samples assuming that
         every sample is independent on the others:
@@ -92,33 +107,18 @@ quiz:
 
         the best fit for the set of samples
     - text: |
-        Consider now 
-
-        $$\frac{\partial L}{\partial \sigma} = 0$$
-    - text: >
-        Turning maximization problem into standard minimization problem,
-
-        we get the loss function:
-
-
-        $$L = k \log \sigma + \sum_k \frac{(x_k - \mu)^2}{2 \sigma^2}$$
-
-
-        that is surprisingly similar to the Squared Error (up to a scaling
-        factor and an additional term)
-    - text: |
         The first term is a constant and cannot be optimized, while the
         second and third ones can be maximized by tuning $\mu$ and $\Sigma$
 answer:
-  - c9f0f895fb98ab9159f51fd0297e236d
-  - 8f14e45fceea167a5a36dedd4bea2543
+  - d3d9446802a44259755d38e6d163e820
+  - 45c48cce2e2d7fbdea1afc51c7c6ad26
   - eccbc87e4b5ce2fe28308fd9f2a7baf3
   - 6512bd43d9caa6e02c990b0a82652dca
-  - d3d9446802a44259755d38e6d163e820
-  - e4da3b7fbbce2345d7772b0674a318d5
-  - cfcd208495d565ef66e7dff9f98764da
-  - 1679091c5a880faf6fb5e6087eb1b2dc
+  - 8f14e45fceea167a5a36dedd4bea2543
   - c81e728d9d4c2f636f067f89cc14862c
-  - 45c48cce2e2d7fbdea1afc51c7c6ad26
-  - a87ff679a2f3e71d9181a67b7542122c
+  - e4da3b7fbbce2345d7772b0674a318d5
+  - 1679091c5a880faf6fb5e6087eb1b2dc
+  - c9f0f895fb98ab9159f51fd0297e236d
   - c4ca4238a0b923820dcc509a6f75849b
+  - cfcd208495d565ef66e7dff9f98764da
+  - a87ff679a2f3e71d9181a67b7542122c

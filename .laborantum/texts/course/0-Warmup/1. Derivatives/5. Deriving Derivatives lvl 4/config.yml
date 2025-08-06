@@ -7,32 +7,21 @@ score: 1
 quiz:
   variants:
     - text: |
-        Consider combination of forward and inverse functions
-        $$\arcsin(\sin(x)) = x$$
-    - text: >
-        Replace $\sin x$ with $y$:
-
-        $$\frac{d}{dx}\arcsin(\sin(x)) = \frac{d
-        \arcsin(y)}{d(y)}\frac{d(y)}{dx}$$
+        Finally, replace $\cos x$ with $\sqrt{1 - \sin^2 x}$:
+        $$\frac{d \arcsin(y)}{d(y)} = \frac{1}{\sqrt{1 - y^2}}$$
     - text: |
         Right side is easy:
         $$\frac{dx}{dx} = 1$$
         And thus:
         $$\frac{d}{dx}\arcsin(\sin(x)) = 1$$
     - text: |
-        Finally, replace $\cos x$ with $\sqrt{1 - \sin^2 x}$:
-        $$\frac{d \arcsin(y)}{d(y)} = \frac{1}{\sqrt{1 - y^2}}$$
+        Consider combination of forward and inverse functions
+        $$\arcsin(\sin(x)) = x$$
     - text: >
         For the left side, use chain rule:
 
         $$\frac{d}{dx}\arcsin(\sin(x)) = \frac{d
         \arcsin(\sin(x))}{d(\sin(x))}\frac{d(\sin(x))}{dx}$$
-    - text: |
-        But this expression should be equal to 1!:
-        $$\frac{d \arcsin(y)}{d(y)}\frac{d(y)}{dx} = 1$$
-    - text: |
-        Hence, the derivative of $\arcsin x$ is:
-        $$\frac{d}{dx}\arcsin x = \frac{1}{\sqrt{1 - x^2}}$$
     - text: |
         Take derivative of both sides:
         $$\frac{d}{dx}\arcsin(\sin(x)) = \frac{dx}{dx}$$
@@ -40,16 +29,27 @@ quiz:
         And we know that $\frac{dy}{dx} = \cos x$:
         $$\frac{d \arcsin(y)}{d(y)} = \frac{1}{\cos x}$$
     - text: |
+        Hence, the derivative of $\arcsin x$ is:
+        $$\frac{d}{dx}\arcsin x = \frac{1}{\sqrt{1 - x^2}}$$
+    - text: |
+        But this expression should be equal to 1!:
+        $$\frac{d \arcsin(y)}{d(y)}\frac{d(y)}{dx} = 1$$
+    - text: |
         So, we have:
         $$\frac{d \arcsin(y)}{d(y)} = \frac{1}{\frac{dy}{dx}}$$
+    - text: >
+        Replace $\sin x$ with $y$:
+
+        $$\frac{d}{dx}\arcsin(\sin(x)) = \frac{d
+        \arcsin(y)}{d(y)}\frac{d(y)}{dx}$$
 answer:
-  - cfcd208495d565ef66e7dff9f98764da
-  - 8f14e45fceea167a5a36dedd4bea2543
   - c81e728d9d4c2f636f067f89cc14862c
   - a87ff679a2f3e71d9181a67b7542122c
   - c4ca4238a0b923820dcc509a6f75849b
-  - e4da3b7fbbce2345d7772b0674a318d5
-  - 45c48cce2e2d7fbdea1afc51c7c6ad26
-  - c9f0f895fb98ab9159f51fd0297e236d
   - eccbc87e4b5ce2fe28308fd9f2a7baf3
+  - 45c48cce2e2d7fbdea1afc51c7c6ad26
+  - 8f14e45fceea167a5a36dedd4bea2543
+  - c9f0f895fb98ab9159f51fd0297e236d
+  - e4da3b7fbbce2345d7772b0674a318d5
+  - cfcd208495d565ef66e7dff9f98764da
   - 1679091c5a880faf6fb5e6087eb1b2dc
