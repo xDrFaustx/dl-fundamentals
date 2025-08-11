@@ -16,24 +16,11 @@ quiz:
         $$f(x + dx) = f'(x) dx + f(x)$$
         Using this expression, we can expand the first term
     - text: |
-        The first and the last terms cancel out:
-        $$\frac{f'(g(x)) g'(x) dx}{dx}$$
-    - text: |
         $dx$ in the numerator and the denominator cancel out:
         $$f'(g(x)) g'(x)$$
-    - text: >
-        Returning g(x) instead of $y$ and $g'(x) dx$ instead of $dx$:
-
-        $$\frac{f(y) + f'(y) dy - f(g(x))}{dx} = \frac{f(g(x)) + f'(g(x)) g'(x)
-        dx - f(g(x))}{dx}$$
     - text: |
-        Take definiion of derivative and insert f(g(x)) 
-        instead of f(x):
-        $$\frac{df(x)}{dx} = \frac{f(x + dx) - f(x)}{dx} = 
-        \frac{f(g(x + dx)) - f(g(x))}{dx}$$
-    - text: |
-        So, the derivative of compound function $f(g(x))$ is:
-        $$\frac{df(g(x))}{dx} = f'(g(x)) g'(x) = \frac{df}{dg}\frac{dg}{dx}$$
+        The first and the last terms cancel out:
+        $$\frac{f'(g(x)) g'(x) dx}{dx}$$
     - text: |
         Simplify $g(x + dx)$:
         $$\frac{f(g(x) + g'(x)dx) - f(g(x))}{dx}$$
@@ -43,12 +30,25 @@ quiz:
 
         $$\frac{f(y + dy) - f(g(x))}{dx} = \frac{f(y) + f'(y) dy -
         f(g(x))}{dx}$$
+    - text: |
+        Take definiion of derivative and insert f(g(x)) 
+        instead of f(x):
+        $$\frac{df(x)}{dx} = \frac{f(x + dx) - f(x)}{dx} = 
+        \frac{f(g(x + dx)) - f(g(x))}{dx}$$
+    - text: |
+        So, the derivative of compound function $f(g(x))$ is:
+        $$\frac{df(g(x))}{dx} = f'(g(x)) g'(x) = \frac{df}{dg}\frac{dg}{dx}$$
+    - text: >
+        Returning g(x) instead of $y$ and $g'(x) dx$ instead of $dx$:
+
+        $$\frac{f(y) + f'(y) dy - f(g(x))}{dx} = \frac{f(g(x)) + f'(g(x)) g'(x)
+        dx - f(g(x))}{dx}$$
 answer:
-  - a87ff679a2f3e71d9181a67b7542122c
-  - cfcd208495d565ef66e7dff9f98764da
-  - 1679091c5a880faf6fb5e6087eb1b2dc
-  - 8f14e45fceea167a5a36dedd4bea2543
-  - eccbc87e4b5ce2fe28308fd9f2a7baf3
-  - c4ca4238a0b923820dcc509a6f75849b
-  - c81e728d9d4c2f636f067f89cc14862c
   - e4da3b7fbbce2345d7772b0674a318d5
+  - cfcd208495d565ef66e7dff9f98764da
+  - eccbc87e4b5ce2fe28308fd9f2a7baf3
+  - a87ff679a2f3e71d9181a67b7542122c
+  - 8f14e45fceea167a5a36dedd4bea2543
+  - c81e728d9d4c2f636f067f89cc14862c
+  - c4ca4238a0b923820dcc509a6f75849b
+  - 1679091c5a880faf6fb5e6087eb1b2dc
