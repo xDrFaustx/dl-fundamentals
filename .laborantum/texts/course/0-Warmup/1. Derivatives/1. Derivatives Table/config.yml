@@ -25,34 +25,34 @@ quiz:
     - text: $\frac{d}{dx}(C f(x))$
     - text: $\frac{d}{dx}(f(g(x)))$
   variants:
-    - text: $- \frac{1}{\sin^2 x}$
-    - text: $\frac{1}{\cos^2 x}$
-    - text: $x^{-1}$
-    - text: $-\sin(x)$
-    - text: $\frac{1}{\sqrt{1 - x^2}}$
-    - text: $C \frac{d f(x)}{dx} $
-    - text: $- \frac{1}{\sqrt{1 - x^2}}$
-    - text: $\frac{df(x)}{dx} + \frac{dg(x)}{dx}$
     - text: $k x^{k-1}$
+    - text: $\frac{1}{1 + x^2}$
+    - text: $\frac{d f}{d g} \frac{d g}{d x}$
+    - text: $x^{-1}$
+    - text: $\frac{df(x)}{dx} + \frac{dg(x)}{dx}$
+    - text: $- \frac{1}{\sqrt{1 - x^2}}$
+    - text: $\frac{1}{\cos^2 x}$
     - text: $\cos(x)$
     - text: $\frac{d f(x)}{dx} g(x) + f(x) \frac{dg(x)}{dx}$
-    - text: $\frac{d f}{d g} \frac{d g}{d x}$
-    - text: $\frac{1}{1 + x^2}$
-    - text: $- \frac{1}{1 + x^2}$
     - text: $\exp(x)$
+    - text: $-\sin(x)$
+    - text: $- \frac{1}{\sin^2 x}$
+    - text: $- \frac{1}{1 + x^2}$
+    - text: $\frac{1}{\sqrt{1 - x^2}}$
+    - text: $C \frac{d f(x)}{dx} $
 answer:
-  - c9f0f895fb98ab9159f51fd0297e236d
-  - aab3238922bcc25a6f606eb525ffdc56
-  - 45c48cce2e2d7fbdea1afc51c7c6ad26
-  - eccbc87e4b5ce2fe28308fd9f2a7baf3
-  - c81e728d9d4c2f636f067f89cc14862c
-  - c4ca4238a0b923820dcc509a6f75849b
   - cfcd208495d565ef66e7dff9f98764da
-  - a87ff679a2f3e71d9181a67b7542122c
-  - 1679091c5a880faf6fb5e6087eb1b2dc
-  - c20ad4d76fe97759aa27a0c99bff6710
-  - c51ce410c124a10e0db5e4b97fc2af39
+  - 45c48cce2e2d7fbdea1afc51c7c6ad26
   - 8f14e45fceea167a5a36dedd4bea2543
   - d3d9446802a44259755d38e6d163e820
-  - e4da3b7fbbce2345d7772b0674a318d5
+  - eccbc87e4b5ce2fe28308fd9f2a7baf3
+  - 1679091c5a880faf6fb5e6087eb1b2dc
   - 6512bd43d9caa6e02c990b0a82652dca
+  - c51ce410c124a10e0db5e4b97fc2af39
+  - e4da3b7fbbce2345d7772b0674a318d5
+  - c4ca4238a0b923820dcc509a6f75849b
+  - c20ad4d76fe97759aa27a0c99bff6710
+  - a87ff679a2f3e71d9181a67b7542122c
+  - c9f0f895fb98ab9159f51fd0297e236d
+  - aab3238922bcc25a6f606eb525ffdc56
+  - c81e728d9d4c2f636f067f89cc14862c
