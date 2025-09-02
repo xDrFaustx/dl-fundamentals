@@ -2,7 +2,11 @@
     "courseName": "neural-networks",
     "includeData": [
         ".laborantum/utils",
+        ".laborantum/src",
         ".devcontainer",
-        ".vscode"],
+        ".vscode",
+        ".gitignore",
+        "README.md",
+        "LICENSE"],
     "buildFolder": "./build"
 }
