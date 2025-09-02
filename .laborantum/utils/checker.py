@@ -31,11 +31,11 @@ def get(collection, key):
 
 
 def run_checks(
-        recieved, 
-        expected, 
+        recieved,
+        expected,
         test_info='',
         eps=1.0e-4):
-    
+
     report = []
 
     if expected is None:
@@ -57,12 +57,12 @@ def run_checks(
             test_info_new = test_info + ' -> ' + str(key)
             report.extend(run_checks(new_recieved, new_expected, test_info_new))
         return report
-    
+
     if isinstance(expected, str):
         if not isinstance(recieved, str):
             explanation = "FAILED: String is expected"
             return [{'name': test_info, 'ok': False, 'status': explanation}]
-        
+
         misfit = Levenshtein.distance(expected, recieved)
         if misfit != 0:
             explanation = "FAILED: Edit distance between strings is " + str(misfit)
@@ -70,8 +70,8 @@ def run_checks(
         else:
             explanation = 'OK'
             return [{'name': test_info, 'ok': True, 'status': explanation}]
-        
-    
+
+
     if isinstance(expected, (list, tuple)):
         report = []
 
@@ -107,7 +107,11 @@ def run_checks(
         if recieved is None:
             explanation = 'FAILED. Item is not found'
             return [{'name': test_info, 'ok': False, 'status': explanation}]
-        
+
+        if not isinstance(received, numpy.ndarray):
+            explanation = f'FAILED. Expected numpy array, received {type(received)} instead'
+            return [{'name': test_info, 'ok': False, 'status': explanation}]
+
         # Checking if Numpy array is empty
         if expected.size == 0:
             condition = (recieved.size == 0)
@@ -127,7 +131,7 @@ def run_checks(
                 'Recieved type: {}'.format(recieved.dtype)
             )
             return [{'name': test_info, 'ok': False, 'status': explanation}]
-        
+
         # Checking if the arrays have the same number of dimensions
         if len(expected.shape) != len(recieved.shape):
             explanation = (
@@ -136,7 +140,7 @@ def run_checks(
                 'Recieved shape: {}'.format(recieved.shape)
             )
             return [{'name': test_info, 'ok': False, 'status': explanation}]
-        
+
         # Checking if the arrays have the same shape
         if expected.shape != recieved.shape:
             explanation = (
@@ -155,7 +159,7 @@ def run_checks(
                     'Recieved shape: {}'.format(recieved.shape)
                 )
                 return [{'name': test_info, 'ok': False, 'status': explanation}]
-        
+
         # Checking inexact typed arrays
         else:
             mismatch = numpy.abs((recieved - expected))
@@ -167,12 +171,12 @@ def run_checks(
                     'Recieved average mismatch: {}'.format(str(avg_mismatch))
                 )
                 return [{'name': test_info, 'ok': False, 'status': explanation}]
-            
+
         return [{'name': test_info, 'ok': True, 'status': 'OK'}]
 
     # if isinstance(expected, torch.Tensor):
     #     return run_checks(
-    #         recieved.detach().numpy(), 
+    #         recieved.detach().numpy(),
     #         expected.detach().numpy(),
     #         eps=eps)
 
@@ -234,7 +238,7 @@ def ipynb_to_py(source, target):
     source, meta = py_exporter.from_filename(source)
 
     Path(target).unlink(missing_ok=True)
-    
+
     with open(target, 'wb') as fout:
         fout.write(source.encode('utf-8'))
 
@@ -244,11 +248,11 @@ if __name__ == '__main__':
                     prog='ProgramName',
                     description='What the program does',
                     epilog='Text at the bottom of help')
-    
-    parser.add_argument('-t', '--task', 
-                        help="Task path", 
+
+    parser.add_argument('-t', '--task',
+                        help="Task path",
                         type=Path)
-    
+
     args = parser.parse_args()
 
     check_json(args.task)
