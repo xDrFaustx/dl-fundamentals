@@ -43,6 +43,7 @@ class Autoencoder(torch.nn.Module):
 
 class Sampler(torch.nn.Module):
     def __init__(self, channels):
+        ...
         ## YOUR CODE HERE
         # -- placeholder start --
         super().__init__()
@@ -64,7 +65,7 @@ class Sampler(torch.nn.Module):
         sigma = (logvar / 2).exp()
 
         if self.training:
-            noise = torch.nn.randn_like(mu)
+            noise = torch.randn_like(mu)
             res = noise * sigma + mu
         else:
             res = mu
@@ -89,7 +90,7 @@ class VAE(torch.nn.Module):
         encoder_layers.pop()
 
         self.encoder = torch.nn.Sequential(*encoder_layers)
-        self.sampler = Sampler(encoder_layers[-1])
+        self.sampler = Sampler(channels[-1])
 
         decoder_layers = []
         channels = channels[::-1]
