@@ -31,7 +31,7 @@ def get(collection, key):
 
 
 def run_checks(
-        recieved,
+        received,
         expected,
         test_info='',
         eps=1.0e-4):
@@ -39,11 +39,11 @@ def run_checks(
     report = []
 
     if expected is None:
-        if recieved is None:
+        if received is None:
             explanation = "OK"
             return  [{'name': test_info, 'ok': True, 'status': explanation}]
         else:
-            explanation = f"Expecting None, got {str(recieved)}"
+            explanation = f"Expecting None, got {str(received)}"
             return [{'name': test_info, 'ok': False, 'status': explanation}]
 
 
@@ -52,18 +52,18 @@ def run_checks(
 
         for key in expected:
             new_expected = get(expected, key)
-            new_recieved = get(recieved, key)
+            new_received = get(received, key)
 
             test_info_new = test_info + ' -> ' + str(key)
-            report.extend(run_checks(new_recieved, new_expected, test_info_new))
+            report.extend(run_checks(new_received, new_expected, test_info_new))
         return report
 
     if isinstance(expected, str):
-        if not isinstance(recieved, str):
+        if not isinstance(received, str):
             explanation = "FAILED: String is expected"
             return [{'name': test_info, 'ok': False, 'status': explanation}]
 
-        misfit = Levenshtein.distance(expected, recieved)
+        misfit = Levenshtein.distance(expected, received)
         if misfit != 0:
             explanation = "FAILED: Edit distance between strings is " + str(misfit)
             return [{'name': test_info, 'ok': False, 'status': explanation}]
@@ -77,17 +77,17 @@ def run_checks(
 
         for index in range(len(expected)):
             new_expected = get(expected, index)
-            new_recieved = get(recieved, index)
+            new_received = get(received, index)
 
             test_info_new = test_info + ' -> ' + str(index)
-            one_check = run_checks(new_recieved, new_expected, test_info_new)
+            one_check = run_checks(new_received, new_expected, test_info_new)
             report.extend(one_check)
         return report
 
 
     if isinstance(expected, numbers.Number):
         try:
-            misfit = abs(expected - recieved)
+            misfit = abs(expected - received)
             check = (misfit < eps)
             explanation = 'OK'
             if not check:
@@ -104,7 +104,7 @@ def run_checks(
     if isinstance(expected, numpy.ndarray):
 
         # Checking if the answer exists
-        if recieved is None:
+        if received is None:
             explanation = 'FAILED. Item is not found'
             return [{'name': test_info, 'ok': False, 'status': explanation}]
 
@@ -114,61 +114,61 @@ def run_checks(
 
         # Checking if Numpy array is empty
         if expected.size == 0:
-            condition = (recieved.size == 0)
+            condition = (received.size == 0)
             if not condition:
                 explanation = (
                     'FAILED: expected an empty tensor, got non-empty one:\n' +
                     'Expected size: {}\n'.format(str(expected.size)) +
-                    'Recieved size: {}\n'.format(str(recieved.size))
+                    'received size: {}\n'.format(str(received.size))
                 )
                 return [{'name': test_info, 'ok': False, 'status': explanation}]
 
         # Checking if Numpy arrays have the same dtype
-        if recieved.dtype != expected.dtype:
+        if received.dtype != expected.dtype:
             explanation = (
                 'FAILED: data types do not match:\n' +
                 'Expected type: {}'.format(expected.dtype) + '\n' +
-                'Recieved type: {}'.format(recieved.dtype)
+                'received type: {}'.format(received.dtype)
             )
             return [{'name': test_info, 'ok': False, 'status': explanation}]
 
         # Checking if the arrays have the same number of dimensions
-        if len(expected.shape) != len(recieved.shape):
+        if len(expected.shape) != len(received.shape):
             explanation = (
                 'FAILED: tensor dimensionalities do not match:\n' +
                 'Expected shape: {}\n'.format(expected.shape) +
-                'Recieved shape: {}'.format(recieved.shape)
+                'received shape: {}'.format(received.shape)
             )
             return [{'name': test_info, 'ok': False, 'status': explanation}]
 
         # Checking if the arrays have the same shape
-        if expected.shape != recieved.shape:
+        if expected.shape != received.shape:
             explanation = (
                 'FAILED: tensor shapes do not match:\n' +
                 'Expected shape: {}\n'.format(expected.shape) +
-                'Recieved shape: {}'.format(recieved.shape)
+                'received shape: {}'.format(received.shape)
             )
             return [{'name': test_info, 'ok': False, 'status': explanation}]
 
         # Checking the arrays that have the exact types
-        if recieved.dtype in [numpy.bool_, numpy.byte, numpy.ubyte]:
-            if not (recieved == expected).all():
+        if received.dtype in [numpy.bool_, numpy.byte, numpy.ubyte]:
+            if not (received == expected).all():
                 explanation = (
                     'FAILED: tensor shapes do not match:\n' +
                     'Expected shape: {}\n'.format(expected.shape) +
-                    'Recieved shape: {}'.format(recieved.shape)
+                    'received shape: {}'.format(received.shape)
                 )
                 return [{'name': test_info, 'ok': False, 'status': explanation}]
 
         # Checking inexact typed arrays
         else:
-            mismatch = numpy.abs((recieved - expected))
+            mismatch = numpy.abs((received - expected))
             avg_mismatch = mismatch.mean()
             if not avg_mismatch < eps:
                 explanation = (
                     'FAILED: answers do not match:\n' +
                     'Maximal average mismatch: {}\n'.format(str(eps)) +
-                    'Recieved average mismatch: {}'.format(str(avg_mismatch))
+                    'received average mismatch: {}'.format(str(avg_mismatch))
                 )
                 return [{'name': test_info, 'ok': False, 'status': explanation}]
 
@@ -176,7 +176,7 @@ def run_checks(
 
     # if isinstance(expected, torch.Tensor):
     #     return run_checks(
-    #         recieved.detach().numpy(),
+    #         received.detach().numpy(),
     #         expected.detach().numpy(),
     #         eps=eps)
 
