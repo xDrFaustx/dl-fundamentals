@@ -1,11 +1,11 @@
 {
     "correct": 1,
     "selectedVariantIds": [
-        4,
-        5,
-        1,
         2,
+        5,
+        4,
+        3,
         0,
-        3
+        1
     ]
 }
