@@ -15,10 +15,10 @@ quiz:
   variants:
     - text: $BC$
     - text: $DE$
-    - text: $AB$
     - text: $CD$
+    - text: $AB$
 answer:
-  - eccbc87e4b5ce2fe28308fd9f2a7baf3
   - c81e728d9d4c2f636f067f89cc14862c
+  - eccbc87e4b5ce2fe28308fd9f2a7baf3
   - c4ca4238a0b923820dcc509a6f75849b
   - cfcd208495d565ef66e7dff9f98764da

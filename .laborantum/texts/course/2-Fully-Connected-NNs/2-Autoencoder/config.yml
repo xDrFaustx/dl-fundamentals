@@ -2,7 +2,7 @@ type: code
 visible: false
 score: 30
 code:
-  - .laborantum/texts/course/2-Fully-Connected-NNs/1-Shallow-Feedforward-NNs/task.ipynb
+  - .laborantum/texts/course/2-Fully-Connected-NNs/2-Autoencoder/task.ipynb
   - .laborantum/src/models/feedforward/autoencoder.py
 run:
   - jupyter-execute "${relativeTaskPath}/task.ipynb"
