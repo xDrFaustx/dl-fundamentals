@@ -55,6 +55,7 @@ def run_checks(
             new_received = get(received, key)
 
             test_info_new = test_info + ' -> ' + str(key)
+
             report.extend(run_checks(new_received, new_expected, test_info_new))
         return report
 

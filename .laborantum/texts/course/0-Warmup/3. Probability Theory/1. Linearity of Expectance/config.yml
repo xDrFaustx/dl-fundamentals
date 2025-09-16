@@ -6,18 +6,25 @@ shuffle: true
 score: 1
 quiz:
   variants:
-    - text: >
-        Using the classical definition of probability, we may think of $p(\xi =
-        x_k)$ as
-
-        about a fraction of the experiments that yield $x_k$ as the output
-    - text: >
-        Consider $\mathbb E (a \xi + b \eta)$ and rewrite as average of many
-        experiments:
     - text: |
         Start with definition of $\mathbb E \xi$,
         $$\mathbb E \xi = \sum_k p(\xi=x_k) x_k,$$
         where k runs over all possible $x_k$ outputs
+    - text: >
+        Consider $\mathbb E (a \xi + b \eta)$ and rewrite as average of many
+        experiments:
+    - text: |
+        But we know that
+        $$\mathbb E \xi =\frac{1}{N}\sum_{n=1}^N \xi_n$$
+        $$\mathbb E \eta =\frac{1}{N}\sum_{n=1}^N \eta_n$$
+    - text: >
+        Rewriting this formula, we will get:
+
+        $$\mathbb E (a \xi + b \eta) = a \frac{1}{N}\sum_{n=1}^N \xi_n + b
+        \frac{1}{N}\sum_{n=1}^N b \eta_n$$
+    - text: |
+        Thus, we have proved:
+        $$\mathbb E (a \xi + b \eta) = a \mathbb E \xi + b \mathbb E \eta$$
     - text: >
         $$\mathbb E (a \xi + b \eta) = \frac{1}{N}\sum_{n=1}^N a \xi_n + b
         \eta_n$$
@@ -31,24 +38,17 @@ quiz:
         through all of
 
         the $N$ experiments
-    - text: |
-        Thus, we have proved:
-        $$\mathbb E (a \xi + b \eta) = a \mathbb E \xi + b \mathbb E \eta$$
-    - text: |
-        But we know that
-        $$\mathbb E \xi =\frac{1}{N}\sum_{n=1}^N \xi_n$$
-        $$\mathbb E \eta =\frac{1}{N}\sum_{n=1}^N \eta_n$$
     - text: >
-        Rewriting this formula, we will get:
+        Using the classical definition of probability, we may think of $p(\xi =
+        x_k)$ as
 
-        $$\mathbb E (a \xi + b \eta) = a \frac{1}{N}\sum_{n=1}^N \xi_n + b
-        \frac{1}{N}\sum_{n=1}^N b \eta_n$$
+        about a fraction of the experiments that yield $x_k$ as the output
 answer:
-  - c81e728d9d4c2f636f067f89cc14862c
   - cfcd208495d565ef66e7dff9f98764da
-  - a87ff679a2f3e71d9181a67b7542122c
-  - c4ca4238a0b923820dcc509a6f75849b
-  - eccbc87e4b5ce2fe28308fd9f2a7baf3
   - 8f14e45fceea167a5a36dedd4bea2543
   - 1679091c5a880faf6fb5e6087eb1b2dc
+  - c4ca4238a0b923820dcc509a6f75849b
   - e4da3b7fbbce2345d7772b0674a318d5
+  - eccbc87e4b5ce2fe28308fd9f2a7baf3
+  - c81e728d9d4c2f636f067f89cc14862c
+  - a87ff679a2f3e71d9181a67b7542122c
